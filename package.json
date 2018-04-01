@@ -1,0 +1,14 @@
+{
+  "name": "start-polymer3",
+  "flat": true,
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/katejeffreys/start-polymer3.git",
+  "author": "The Polymer Project Authors",
+  "license": "BSD-3-Clause",
+  "dependencies": {
+    "@polymer/paper-button": "^3.0.0-pre.12",
+    "@polymer/paper-checkbox": "^3.0.0-pre.12",
+    "@polymer/polymer": "^3.0.0-pre.12"
+  }
+}
