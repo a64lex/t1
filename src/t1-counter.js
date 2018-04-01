@@ -1,9 +1,9 @@
-/* 
+/*
 @license
 Copyright (c) 2017 @cicciosgamino Author. All rights reserved.
 This code may only be used under the license found at https://github.com/CICCIOSGAMINO/LICENSE.txt
 
-Attention  > Polymer 3.0 Preview in USE ! */ 
+Attention  > Polymer 3.0 Preview in USE ! */
 
 import { PolymerElement, html} from "@polymer/polymer/polymer-element.js";
 import "@polymer/paper-button/paper-button.js"
@@ -18,7 +18,7 @@ export class  T1Counter extends PolymerElement {
   }
 
   static get template() {
-    return `
+    return html`
             <style>
               .main {
                 width: 250px;
@@ -35,10 +35,11 @@ export class  T1Counter extends PolymerElement {
               <hr>
               <paper-button on-tap="_restartTimer">RESTART</paper-button>
               <paper-button on-tap="_cancelTimer">CANCEL</paper-button>
+              <paper-button on-tap="_stoppTimer">STOP</paper-button>
             </div>`;
   }
 
-  // properties, observers, are identical to 2.x 
+  // properties, observers, are identical to 2.x
   static get properties() {
     return {
       name: {
@@ -50,7 +51,7 @@ export class  T1Counter extends PolymerElement {
     }
   }
 
-  // define the observers 
+  // define the observers
   static get observers() {
     return [
       '_nameChanged(name)'
@@ -105,8 +106,15 @@ export class  T1Counter extends PolymerElement {
     this.count=0;
   }
 
+  _stoppTimer(e) {
+    console.log('Stopp');
+    clearInterval(this.timer);
+    this.count=0;
+  }
+
+
 }
 
-    
+
 // Register custom element definition using standard platform API
 customElements.define('t1-counter', T1Counter);
